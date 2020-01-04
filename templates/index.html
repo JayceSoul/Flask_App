@@ -1,0 +1,32 @@
+
+<!-- saved from url=(0108)https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>{% extends "layout.html" %}
+{% block content %}
+        {% for post in posts %}
+        <div class="ui segment">
+            <div class="ui dividing header">
+                <div class="ui unstackable grid">
+                    <div class="three wide center aligned column">
+                        <div class="ui unstackable items">
+                            <div class="item">
+                                 <img class="ui Tiny circular image" src="./index_files/&#39;+post.author.image_file ) }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nine wide center aligned column">
+                          <h2><a href="https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/%7B%7B%20url_for(&#39;post&#39;,%20post_id=post.id)%20%7D%7D">{{post.title}}</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+
+            </div>
+              <div class="extra text">
+                <h3>{{post.content}}</h3>
+                 <div class="ui bottom right attached label"> Posted on {{post.date_posted.strftime('%Y-%m-%d')}} by {{post.author.username}} </div>
+              </div>
+        </div>
+       {% endfor %}
+
+{% endblock content %}
+</body></html>

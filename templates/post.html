@@ -1,0 +1,62 @@
+
+<!-- saved from url=(0107)https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/post.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>{% extends "layout.html" %}
+{% block content %}
+<script>
+$(function(){
+	$("#test").click(function(){
+		$(".test").modal('show');
+	});
+	$(".test").modal({
+		closable: true
+	});
+});
+</script>
+
+
+<div class="ui segment">
+            <div class="ui Tiny top right attached label">
+                <a class="ui Teal button" href="https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/%7B%7B%20url_for(&#39;update_post&#39;,%20post_id=post.id)%20%7D%7D">Update </a>
+                <button class="ui Red button create_btn" type="button" id="test">Delete</button>
+                    <div class="ui modal test">
+                      <i class="close icon"></i>
+                      <div class="header">
+                        Delete post?
+                      </div>
+                      <div class="content">
+                        <div class="description">
+                          click off the screen to close
+                        </div>
+                      </div>
+                      <div class="actions">
+                            <div>
+                                <form action="https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/%7B%7B%20url_for(&#39;delete_post&#39;,%20post_id=post.id)%20%7D%7D" method="POST">
+                                <input class="ui negative button" type="submit" value="Delete">
+                                </form>
+                            </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="ui dividing header">
+                <div class="ui unstackable grid">
+                    <div class="three wide center aligned column">
+                        <div class="ui unstackable items">
+                            <div class="item">
+                                 <img class="ui Tiny circular image" src="./post_files/&#39;+post.author.image_file ) }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nine wide center aligned column">
+                         <h2>{{post.title}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+
+        </div>
+             <div class="extra text">
+            <h3>{{post.content}}</h3>
+        <div class="ui bottom right attached label"> Posted on {{post.date_posted.strftime('%Y-%m-%d')}} by {{post.author.username}} </div>
+    </div>
+ </div>
+{% endblock content %}</body></html>

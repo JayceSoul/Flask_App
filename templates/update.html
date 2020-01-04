@@ -1,0 +1,49 @@
+
+<!-- saved from url=(0109)https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/update.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>{% extends "layout.html" %}
+{% block content %}
+<div class="ui segment">
+    <form method="POST" action="https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/update.html" enctype="multipart/form-data" class="ui large form">
+            {{ form.hidden_tag() }}
+                <div class="field">
+                    {{ form.title.label() }}
+                        {% if form.title.errors %}
+                            <div class="ui left icon input">
+                                <i class="pencil alternate icon"></i>
+                                {{ form.title(class="form-control form-control-lg is-invaild") }}
+                            </div>
+                            <div class="invaild-feedback">
+                                {% for error in form.title.errors%}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                <div class="ui left icon input">
+                                    <i class="pencil alternate icon"></i>
+                                    {{ form.title(class="form-control form-control-lg") }}
+                                </div>
+                        {% endif %}
+                </div>
+                <div class="field">
+                  	{{ form.content.label() }}
+                      	{% if form.content.errors %}
+                      	    <div class="ui left icon input">
+                                {{ form.content(class="form-control form-control-lg is-invaild") }}
+                            </div>
+                            <div class="invaild-feedback">
+                                {% for error in form.content.errors%}
+                                    <br>
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                <div class="ui left icon input">
+                                    {{ form.content(class="form-control form-control-lg") }}
+                                </div>
+                        {% endif %}
+                </div>
+
+                {{ form.submit(class="ui fluid large teal submit button") }}
+    </form>
+</div>
+{% endblock content %}</body></html>

@@ -1,0 +1,83 @@
+
+<!-- saved from url=(0110)https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/account.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>{% extends "layout.html" %}
+{% block content %}
+
+    <div class="ui segment">
+        <h2 class="ui dividing header">Account</h2>
+            <div class="ui stackable grid">
+                <div class="five wide center aligned column">
+                    <div class="ui items">
+                        <div class="item">
+                             <img class="ui small circular image" src="./account_files/{{ image_file }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="nine wide left aligned column">
+                    <h3 class="ui header">User: {{ current_user.username }}</h3><br>
+                    <h3 class="ui header">Email: {{ current_user.email }}</h3>
+                </div>
+            </div>
+        <h2 class="ui dividing header"></h2>
+        <form method="POST" action="https://www.pythonanywhere.com/user/JonathanOng/files/home/JonathanOng/mysite/flask_app/templates/account.html" enctype="multipart/form-data" class="ui large form">
+            {{ form.hidden_tag() }}
+                <div class="field">
+                    {{ form.username.label() }}
+                        {% if form.username.errors %}
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                {{ form.username(class="form-control form-control-lg is-invaild") }}
+                            </div>
+                            <div class="invaild-feedback">
+                                {% for error in form.username.errors%}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                <div class="ui left icon input">
+                                    <i class="user icon"></i>
+                                    {{ form.username(class="form-control form-control-lg") }}
+                                </div>
+                        {% endif %}
+                </div>
+                <div class="field">
+                  	{{ form.email.label() }}
+                      	{% if form.email.errors %}
+                      	    <div class="ui left icon input">
+                      	        <i class="envelope icon"></i>
+                                {{ form.email(class="form-control form-control-lg is-invaild") }}
+                            </div>
+                            <div class="invaild-feedback">
+                                {% for error in form.email.errors%}
+                                    <br>
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                <div class="ui left icon input">
+                      	            <i class="envelope icon"></i>
+                                    {{ form.email(class="form-control form-control-lg") }}
+                                </div>
+                        {% endif %}
+                </div>
+                <div class="field">
+                  	{{ form.picture.label() }}
+                  	<div class="ui left icon input">
+                      	 <i class="camera icon"></i>
+                        {{ form.picture(class="form-control-file") }}
+                    </div>
+                      	{% if form.picture.errors %}
+                            <div class="invaild-danger">
+                                {% for error in form.picture.errors%}
+                                    <br>
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                </div>
+                {{ form.submit(class="ui fluid large teal submit button") }}
+        </form>
+    </div>
+
+
+{% endblock content %}</body></html>
