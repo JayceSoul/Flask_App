@@ -5,11 +5,17 @@ It's objective was to simiply demo the use of Semetic UI as frontend and Flask a
 In this project I learned The following:
 
 -Flask templating which is to use code blocks to display html code lessening repetition.
--How to create routes 
+
+-How to create routes
+
 -The creation of forms and how to handle the response using Flask
+
 -How to handle form verification with Flask
+
 -Creation of databases and models
+
 -How to allow Flask to read and write data to the database
+
 -How to handle user authorization so that users can only delete/update their own posts
 
 Lastly I deployed the application I made to pythonanywhere: http://jonathanong.pythonanywhere.com/
